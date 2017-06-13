@@ -1,0 +1,113 @@
+/*	pipe(a);
+	pipe(b);
+	pipe(c);
+	pipe(d);
+
+	pid1 = fork();
+
+	//Hijo
+	if(pid1 == 0){
+	
+		close(a[1]);
+		close(b[0]);
+				
+		while((leido = read(a[0], buff, sizeof buff)) > 0){
+		
+			write(1, buff, leido);
+			
+			strcpy(texto, buff);
+			
+			palabras = strtok(buff, s2);			
+			
+			while((palabras = strtok(NULL, s2)) != NULL){
+			
+				cantidad++;			
+
+			}	
+		}
+		
+		close(a[0]);
+		printf("HIJO '1': Cantidad de palabras %d\n", cantidad);	
+		
+		sprintf(cantletras,"%d", cantidad);
+
+		write(b[1], cantletras, strlen(cantletras));		
+		
+		close(b[1]);
+		printf("HIJO '1': Ahora por fin termino\n");
+		
+		return 0;
+	}
+	
+
+	pid2 = fork();
+
+	//Hijo 2
+	if(pid2 == 0){
+		sleep(4);
+		close(c[1]);
+		close(d[0]);
+				
+		while((leido2 = read(c[0], buff2, sizeof buff2)) > 0){			
+			
+			write(1, buff2, leido2);
+			strcpy(texto, buff2);
+			
+			palabras2 = strtok(buff2, s2);			
+			
+			while((palabras2 = strtok(NULL, s2)) != NULL){
+			
+				cantidad++;			
+
+			}	
+		}
+		
+		close(c[0]);
+		cantidad ++;
+		printf("HIJO '2': Cantidad de palabras +1 %d\n", cantidad);	
+		
+		sprintf(cantletras,"%d", cantidad);
+
+		write(d[1], cantletras, strlen(cantletras));		
+		close(d[1]);
+		printf("HIJO '2': Ahora por fin termino\n");
+		
+		return 0;
+	}
+
+	
+	//Padre
+	close(a[0]);
+	close(b[1]);	
+	
+	close(c[0]);
+	close(d[1]);	
+	
+
+	sleep(2);
+	
+	while((leido = read(0, buff, sizeof buff)) > 0){
+
+		leido2 = leido;
+
+		strcpy(buff2,buff);		
+
+		write(a[1], buff, leido);
+		write(c[1], buff2, leido2);
+
+	}
+
+	close(a[1]);
+	close(c[1]);
+
+	read(b[0], cantletras2, sizeof cantletras2);
+	read(d[0], cantletras3, sizeof cantletras3);		
+
+	printf("PADRE: Cantidad de palabras leidas del primer hijo %s\n", cantletras2);	
+	printf("PADRE: Cantidad de palabras leidas del segundo hijo %s\n", cantletras3);	
+
+	close(b[0]);
+	close(d[0]);
+
+	//wait(NULL);
+*/
