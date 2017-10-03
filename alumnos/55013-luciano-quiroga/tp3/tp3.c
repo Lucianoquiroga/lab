@@ -121,14 +121,14 @@ int main(int argc, char **argv)
 			if(x == 1){
 				
 			int leido2, cantidad2 = 0;
-			char buff2[100];
+			char buff2[1000];
 			char *palabras;					
 			char cantletras2[10];
 			int nchars;		
 		
 			printf("HIJO %d: Soy el hijo con id =  %d, mi padre tiene id =  %d.\n", x,getpid(),getppid());
 			
-			memset(buff2, '\0',  100);
+			memset(buff2, '\0',  1000);
 			memset(cantletras2, '\0', 10);			
 			
 			close(a[1]);
@@ -198,15 +198,17 @@ int main(int argc, char **argv)
 					
 			}else{
 					
-			int leido3, cantidad3 = 0, i, j, k;
+			int leido3, cantidad3 = 0, i, j, k,p;
 			char buff3[2000], cantletras3[10];
 			char *palabras3;
 			char texto[40], texto2[40],texto3[40];
 			int fd, nchars2, nchars3;
 			char archivoesf[20];
-		
+			char palabra1[]= "Hypertext";
+	
+	
 			printf("HIJO %d: Soy el hijo con id =  %d, mi padre tiene id =  %d.\n", x,getpid(),getppid());
-			
+			printf("Palabra %s\n", palabra1);	
 			
 			sprintf(archivoesf,"./%s", archivoes);			
 
@@ -248,7 +250,7 @@ int main(int argc, char **argv)
 					}
 					
 					j = strcmp(texto, texto2);
-	
+
 					if(j < 0){
 	
 						for(k = 0; texto[k];k++){
@@ -258,8 +260,7 @@ int main(int argc, char **argv)
 						//printf("%s\n", texto);
 						cantidad3++;
 						write(fd, texto, nchars2);
-					}			
-
+					}
 				}	
 			}
 						

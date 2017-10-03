@@ -1,0 +1,32 @@
+1- El tp4 consiste en programar un servidor web.
+
+2- El servidor web tendrá que crear un proceso hijo para atender un requerimiento del cliente, o sea, será un proceso por request.
+
+5-El servidor tendrá que manejar el método GET. Si el cliente envia un requerimiento con otro método, el servidor tendrá que responder con el error HTTP correspondiente.
+
+1- El servidor web tiene que manejar los mime types para los archivos: jpg, png, pdf, html y gif. Si el formato del archivo es otro, tendrá que devolver el text/plain por defecto.
+
+3-El servidor web tendrá que implementar los siguientes codes de HTTP en las respuestas: 200, 403, 404 y 500.
+
+4-El servidor web podrá probarse con la aplicación ab(apache benchmark). Deberá aportar al menos 10.000 conexiones y 5 concurrentes. 
+
+$ ab -n 10000 -c 5 http://localhost:8000/index.html
+
+
+
+
+/*t1-El tp4 consiste en programar un servidor web.
+2- El servidor web tendrá que crear un proceso hijo para atender 
+un requerimiento del cliente, o sea, será un proceso por request.
+5-El servidor tendrá que manejar el método GET. Si el cliente envia 
+un requerimiento con otro método, el servidor tendrá que responder 
+con el error HTTP correspondiente.
+1- El servidor web tiene que manejar los mime types para los archivos:
+jpg, png, pdf, html y gif. Si el formato del archivo es otro,
+tendrá que devolver el text/plain por defecto.
+3-El servidor web tendrá que implementar los siguientes codes de HTTP
+en las respuestas: 200, 403, 404 y 500.
+4-El servidor web podrá probarse con la aplicación ab(apache benchmark).
+Deberá aportar al menos 10.000 conexiones y 5 concurrentes. 
+	$ ab -n 10000 -c 5 http://localhost:8000/index.html
+  */

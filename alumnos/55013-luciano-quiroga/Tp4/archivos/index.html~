@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<style>
+table{
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th{
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even){
+	background-color: #dddddd;
+}
+
+</style>
+<TITLE>TABLA</TITLE>
+</HEAD>
+<BODY>
+<P>Titulo: Como hacer una tabla!</P>
+<table>
+<head>
+<tr>
+<th colspan = "3">
+Titulo de la tabla
+</th>
+<tr>
+</head>
+<body>
+<tr>:
+<td>
+fila 1 / columna1
+</td>
+<td>
+fila 1 / columna2
+</td>
+<td>
+fila 1 / columna3
+</td>
+</tr>
+<tr>
+<td>
+fila 2 / columna1
+</td>
+<td>
+fila 2 / columna2
+</td>
+<td>
+fila 2 / columna3
+</td>
+</tr>
+<tr>
+<td>
+fila 3 / columna1
+</td>
+<td>
+fila 3 / columna2
+</td>
+<td>
+fila 3 / columna3
+</td>
+</tr>
+</body>
+</table>
+</BODY>
+</HTML>

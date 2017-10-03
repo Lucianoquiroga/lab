@@ -1,40 +1,29 @@
-# COMPUTACION II
+COMPUTACION II
 
+TP3
 
-# TP2
+Fecha de entrega: 13/06/17
 
-Fecha de entrega: 23/05/17
+Requerimientos:
 
+Crear una aplicación que procese un archivo por entrada estándar. La aplicación deberá lanzar tres procesos. El proceso padre cargará en memoria compartida el contenido de un archivo, el cual será analizado luego por los tres procesos. Dos procesos deberán contar la cantidad de palabras, mientras que el restante deberá contar la cantidad de palabras que aparecen de un conjunto dado de palabras. El proceso padre notificará con una señal a los hijos, luego de haber cargado el archivo en memoria compartida.
 
-## Requerimientos:
+Lista de palabras: Hypertext, protocol, HTTP, MIME, gateway, URL y URI.
 
-Crear una aplicación que procese un archivo por entrada estándar. La aplicación deberá 
-lanzar dos procesos. El primero deberá contar la cantidad de palabras mientras que el 
-segundo convertirá una serie de palabras específicas a mayúsculas. 
+Modo de uso
 
-El padre será quien muestre la cantidad de palabras por pantalla, mientras que la salida
-del segundo proceso deberá redireccionarse a un archivo nuevo.
- 
+$ ./tp3 -i archivo
 
-## Modo de uso
+Objetivos
 
-$ cat noticia | ./tp2 -o newfile
-$ ./tp2 -i noticia -o newfie
+Utilizar getopt para manejo de argumentos.
+Utilizar un archivo Makefile para el proceso de compilación y testeo.
+Manejo y sincronización de procesos.
+Uso de señales.
+Tips
 
-
-## Objetivos
-
-* Utilizar redirección de entrada y salida.
-* Utilizar getopt para manejo de argumentos.
-* Utilizar un archivo Makefile para el proceso de compilación y testeo.
-* Manejo y sincronización de procesos.
-
-
-### Tips
-
-* funciones para el manejo de cadenas de caracteres en la biblioteca string.h
-* read()
-* write()
-* pipe()
-* fork()
-
+funciones para el manejo de cadenas de caracteres en la biblioteca string.h
+read()
+write()
+fork()
+snprintf()
